@@ -1,0 +1,81 @@
+<form>
+    <div class="mb-3">
+      <label for="buscado" class="form-label">Buscar</label>
+      <input type="text" class="form-control" id="buscado" aria-describedby="buscar" name="buscado" [(ngModel)]="elementoBuscado">
+    </div>
+   
+    <button type="submit" class="btn btn-primary" (click)="buscar()">buscar</button>
+</form>
+<div class="row">
+<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"> <p>INFORMACION DE LA IP</p></li>
+    <li class="list-group-item">Pais: {{resultado.country}}</li>
+    <li class="list-group-item">Ciudad: {{resultado.city}}</li>
+    <li class="list-group-item"> INFORMACION DE LA UBICACION</li>
+    <li class="list-group-item"> Fecha del lugar: {{resultado.timezone.date}}</li>
+    <li class="list-group-item"> Hora del lugar: {{resultado.timezone.time}}</li>
+    <li class="list-group-item"> Zona horaria: {{resultado.timezone.id}}</li>
+    
+  </ul>
+  <div class="card-footer">
+    <a href="{{link}}" target="_blank">Ir al lugar</a>
+  </div>
+</div>
+</div>
+
+<!--
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">titulo</th>
+        <th scope="col">enlace</th>
+        <th scope="col">canal de youtube</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of listaResultados">
+        <td>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="seleccionado(r)">
+                {{r.id}}
+            </button>
+           
+        </td>
+        <td>{{r.title}}</td>
+        <td>
+            <a href="{{r.url}}" target="_blank">abrir enlace</a>
+        </td>
+        <td>
+            <p>Canal: {{r.channel.name}}</p>
+            <img src="{{r.channel.icon}}" style="width: 100px; height: 100px;" alt="aca una imagen">
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal 
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>{{seleccion.title}}</p>
+          <p></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>-->

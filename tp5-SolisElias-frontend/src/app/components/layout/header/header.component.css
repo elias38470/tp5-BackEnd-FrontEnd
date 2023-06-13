@@ -1,0 +1,30 @@
+.navbar{
+    margin: 0%;
+    padding: 0%;
+    text-align: end;
+    font-size: 20px;
+    font-weight: bold;
+    padding-block: 12px;
+    background-color: rgba(20, 182, 182, 0.966);
+}
+
+
+
+h1,ul{
+    text-align: center;
+    background-color: rgba(20, 182, 182, 0.966);
+    margin: 0%;
+    padding: 0%;
+}
+li{
+    text-align: center;
+    background-color: rgba(20, 182, 182, 0.966);
+}
+.container-fluid{
+    background-color: rgba(20, 182, 182, 0.966);
+    margin: 0%;
+    padding: 0%;
+}
+nav{
+    padding: 0%;
+}
