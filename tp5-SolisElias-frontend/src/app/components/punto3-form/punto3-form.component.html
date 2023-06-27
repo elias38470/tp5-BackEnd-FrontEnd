@@ -1,0 +1,54 @@
+
+<!--<div>datos del formulario: {{ticketForm.value | json}}</div>
+<div>estado del formulario: {{ticketForm.status}}</div>-->
+<div class="container">
+    <form #ticketForm="ngForm">
+
+        <div class="mb-3" hidden>
+        <label for="_id" class="form-label">Id</label>
+        <input type="text" class="form-control" id="_id" name="_id" [(ngModel)]="ticket._id">
+        </div>
+
+        <div class="mb-3">
+            <label for="espectador"class="form-label">Espectador</label>
+            <select class="form-select"name="espectador" id="espectador" [(ngModel)]="ticket.espectador" required #espectador="ngModel">
+                <option *ngFor="let espectador of listaEspectadores" [ngValue]="espectador" >{{espectador.apellido}},{{espectador.nombre}}</option>
+            </select>
+            <div *ngIf="espectador.invalid && (espectador.dirty || espectador.touched)" class="alert alert-danger ">
+                <div *ngIf="espectador.errors?.['required']">
+                    Espectador es requerido
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="mb-3">
+            <label for="categoriaEspectador"class="form-label">Categoria de Espectador</label>
+            <select class="form-select"name="categoriaEspectador" id="categoriaEspectador" [(ngModel)]="ticket.categoriaEspectador" required #categoriaEspectador="ngModel">
+                <option value="l">local</option>
+                <option value="e">extranjero</option>
+            </select>
+            <div *ngIf="categoriaEspectador.invalid && (categoriaEspectador.dirty || categoriaEspectador.touched)" class="alert alert-danger">
+                <div *ngIf="categoriaEspectador.errors?.['required']">
+                    Categoria Espectador es requerido
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mb-3">
+        <label for="fechaCompra" class="form-label">Fecha de compra</label>
+        <input type="date" class="form-control" id="fechaCompra" name="fechaCompra" [(ngModel)]="ticket.fechaCompra"  required #fechaCompra="ngModel">
+        <div *ngIf="fechaCompra.invalid && (fechaCompra.dirty || fechaCompra.touched)" class="alert alert-danger">
+            <div *ngIf="fechaCompra.errors?.['required']">
+                Fecha de compra es requerido
+            </div>
+        </div>
+        
+        
+        </div>
+    
+        <button *ngIf="accion == 'new'" type="submit" class="btn btn-primary" (click)="guardarTicket()" [disabled]="!ticketForm.form.valid">Guardar</button>
+        <button *ngIf="accion == 'update'" type="submit" class="btn btn-primary" (click)="actualizarTicket()" [disabled]="!ticketForm.form.valid">Modificar</button>
+    </form>
+</div>

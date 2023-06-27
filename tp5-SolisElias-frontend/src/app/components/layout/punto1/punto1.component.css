@@ -1,0 +1,21 @@
+*{
+    text-align: center;
+}
+img{
+    width: 50%;
+    height: 326px;
+}
+
+
+.carousel-item .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel-control-prev-icon,.visually-hidden {
+    color: black; /* Cambia el color del ícono */
+  }
+  
+  
+  

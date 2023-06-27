@@ -15,7 +15,7 @@ router.post('/',ticketCtrl.createTicket);// http://localhost:3000/api/ticket/
 
 
 
-//router.get('/:id', productoCtrl.getProducto);  // http://localhost:3000/api/agente/
+router.get('/:id', ticketCtrl.getUnTicket);  // http://localhost:3000/api/agente/
 router.put('/:id', ticketCtrl.editTicket);
 router.delete('/:id', ticketCtrl.deleteTicket);
 router.get('/:categoriaEspectador',ticketCtrl.getTicketPorCategoriaEspectador);

@@ -1,0 +1,54 @@
+<div class="">
+    <h2>Gestion de Tickets</h2>
+    <form class="row g-3">
+      <div class="col-auto">
+        <label for="categoriaEspectador" >Categoria de Espectador</label>
+        <select id="categoriaEspectador" class="form-select" name="categoriaEspectador"[(ngModel)]="categoriaEspectador" required>
+          <option value="l">local</option>
+          <option value="e">extranjero</option>
+        </select>
+      </div>
+      <div class="col-auto">
+        <br>
+        <button type="submit" class="btn btn-primary mb-3"(click)="obtenerXfiltro()">RECUPERAR POR FILTRO</button>
+      </div>
+      <div class="col-auto">
+        <br>
+        <button type="submit" class="btn btn-primary mb-3"(click)="ObtenerTodo()">RECUPERAR TODO</button>
+      </div>
+    </form>
+    
+    
+    
+    
+    
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Espectador</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">DNI</th>
+            <th scope="col">Email</th>
+            <th scope="col">Fecha de cobro</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ticket of vtickets">
+            <td>{{ticket.espectador.nombre}} {{ticket.espectador.apellido}}</td>
+            <td>{{ticket.categoriaEspectador}}</td>
+            <td>{{ticket.espectador.dni}}</td>
+            <td>{{ticket.espectador.email}}</td>
+            <td>{{ticket.fechaCompra}}</td>
+            <td>   
+              <button type="button" class="btn btn-primary" style="margin-right: 10px;" (click)="actualizarTicket(ticket)" >Modificar</button>
+              <button type="button" class="btn btn-danger" (click)="eliminarTicket(ticket)">Eliminar</button>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="dirForm()">Agregar Ticket</button>
+  </div>
+  

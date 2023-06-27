@@ -15,7 +15,7 @@ router.get('/', productoCtrl.getProductos); // http://localhost:3000/api/product
 router.post('/', productoCtrl.createProducto); // http://localhost:3000/api/agente/
 
 
-//router.get('/:id', productoCtrl.getProducto);  // http://localhost:3000/api/agente/
+router.get('/:id', productoCtrl.getProducto);  // http://localhost:3000/api/agente/
 router.put('/:id', productoCtrl.editProducto);
 router.delete('/:id', productoCtrl.deleteProducto);
 router.get('/:destacado',productoCtrl.getProductosDestacados);

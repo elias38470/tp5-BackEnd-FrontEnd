@@ -2,8 +2,18 @@ const Transaccion = require('../models/transaccion');
 
 const transaccionCtrl = {} 
 
+
 transaccionCtrl.getTransaccion = async(req,res)=>{
-    var transacciones = await Transaccion.find();
+    let criterio = {}
+    if ((req.query.email != null && req.query.email != "")) {  // tambien podria cambiar la condicion por if (req.query.destacado !== undefined)
+      criterio.emailCliente = req.query.email;
+    }
+    if ((req.query.origen != null && req.query.origen != "")&&(req.query.destino != null && req.query.destino != "")) {  // tambien podria cambiar la condicion por if (req.query.destacado !== undefined)
+      criterio.monedaOrigen = req.query.origen;
+      criterio.monedaDestino= req.query.destino;
+    }
+
+    const transacciones = await Transaccion.find(criterio);
     res.json(transacciones);
 };
 

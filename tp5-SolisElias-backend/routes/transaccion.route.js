@@ -15,8 +15,8 @@ router.get('/', transaccionCtrl.getTransaccion); // http://localhost:3000/api/tr
 router.post('/', transaccionCtrl.createTransaccion); // http://localhost:3000/api/transaccion/
 
 
-router.get('/:e', transaccionCtrl.getHistoricoTransacciones);  // http://localhost:3000/api/transaccion/
-router.get('/:Origen/:Destino',transaccionCtrl.getTransaccionesPorDivisas)
+//router.get('/:email', transaccionCtrl.getHistoricoTransacciones);  // http://localhost:3000/api/transaccion/
+//router.get('/:Origen/:Destino',transaccionCtrl.getTransaccionesPorDivisas)
 //router.put('/:id', productoCtrl.editProducto);
 //router.delete('/:id', productoCtrl.deleteProducto);
 //router.get('/:destacado',productoCtrl.getProductosDestacados);

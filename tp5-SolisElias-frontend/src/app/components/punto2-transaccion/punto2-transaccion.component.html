@@ -1,0 +1,47 @@
+<form class="row g-3">
+  <div class="col-auto">
+    <label for="" class="form-label">Moneda Origen</label>
+    <select id="" class="form-select" name="monedaOrigen"[(ngModel)]="monedaOrigen" required>
+      <option *ngFor="let divisa of listadoDivisas" value={{divisa.symbol}} >{{divisa.symbol}}  {{divisa.name}} </option>
+    </select>
+  </div>
+  <div class="col-auto">
+    <label for="" class="form-label">Moneda Destino</label>
+    <select id="" class="form-select" name="monedaOrigen"[(ngModel)]="monedaDestino" required>
+      <option *ngFor="let divisa of listadoDivisas" value={{divisa.symbol}} >{{divisa.symbol}}  {{divisa.name}} </option>
+    </select>
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-3"(click)="obtenerXfiltro()">RECUPERAR POR FILTRO</button>
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-3"(click)="todasTransacciones()">RECUPERAR TODO</button>
+  </div>
+</form>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Moneda Origen</th>
+        <th scope="col">Cantidad Moneda Origen</th>
+        <th scope="col">Tasa de conversion</th>
+        <th scope="col">Moneda Destino</th>
+        <th scope="col">Cantidad Moneda Destino</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+
+    <tbody class="table-group-divider">
+      <tr *ngFor="let transaccion of listaTransacciones">
+        <td>{{transaccion.monedaOrigen}}</td>
+        <td>$ {{transaccion.cantidadOrigen}}</td>
+        <td>% {{transaccion.tasaConversion}}</td>
+        <td>{{transaccion.monedaDestino}}</td>
+        <td>$ {{transaccion.cantidadDestino}}</td>
+        <td>{{transaccion.emailCliente}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ 
